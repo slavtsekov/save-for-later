@@ -18,6 +18,14 @@ export const Header = (props) => (
                     Logout
                 </button>
             </div>
+            <nav>
+                <Link to="/dashboard">
+                    <h2>Home</h2>
+                </Link>
+                <Link to="/folders">
+                    <h2>Folders</h2>
+                </Link>
+            </nav>
         </div>
     </header>
 );

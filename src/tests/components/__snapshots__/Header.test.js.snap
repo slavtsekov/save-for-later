@@ -27,6 +27,24 @@ exports[`should render Header correctly 1`] = `
         Logout
       </button>
     </div>
+    <nav>
+      <Link
+        replace={false}
+        to="/dashboard"
+      >
+        <h2>
+          Home
+        </h2>
+      </Link>
+      <Link
+        replace={false}
+        to="/folders"
+      >
+        <h2>
+          Folders
+        </h2>
+      </Link>
+    </nav>
   </div>
 </header>
 `;
