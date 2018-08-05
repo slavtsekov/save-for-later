@@ -1,8 +1,11 @@
 import React from 'react';
+import Folders from './Folders';
+import AddFolder from './AddFolder';
 
 const FoldersPage = () => (
     <div>
-        Folders page content.
+        <Folders />
+        <AddFolder />
     </div>
 );
 

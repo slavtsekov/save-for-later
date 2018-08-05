@@ -1,5 +1,6 @@
 {
     "extends": "airbnb",
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaVersion": 6
     },
@@ -24,6 +25,7 @@
         "object-curly-newline": "off",
         "no-underscore-dangle": "off",
         "global-require": "warn",
+        "prefer-destructuring": "warn",
         "react/jsx-indent": [2, 4],
         "react/jsx-filename-extension": 0,
         "react/jsx-one-expression-per-line": 0,

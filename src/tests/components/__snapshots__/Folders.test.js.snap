@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Folders correctly 1`] = `
+<div>
+  <div>
+    <h3>
+      Your Folders
+    </h3>
+  </div>
+  <Folder
+    key="Folder 1"
+    onDelete={[Function]}
+    text="Folder 1"
+  />
+  <Folder
+    key="Folder 2"
+    onDelete={[Function]}
+    text="Folder 2"
+  />
+</div>
+`;

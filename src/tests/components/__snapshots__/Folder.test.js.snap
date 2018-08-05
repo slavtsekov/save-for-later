@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Folder correctly 1`] = `
+<div>
+  <p />
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Remove
+  </button>
+</div>
+`;
