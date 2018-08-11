@@ -2,28 +2,37 @@ import React from 'react';
 
 import Folder from './Folder';
 
-const Folders = (props) => {
-    const folders = ['Folder 1', 'Folder 2'];
-    const handleDeleteFolder = (folderName) => {
-        console.log('Removed', folderName);
+class Folders extends React.Component {
+    state = {
+        folders: ['Folder 1', 'Folder 2']
     };
-    return (
-        <div>
+
+    handleDeleteFolder = (folderName) => {
+        this.setState((prevState) => {
+            const folders = prevState.folders.filter(folder => folder !== folderName);
+            return { folders };
+        });
+    };
+
+    render() {
+        return (
             <div>
-                <h3>Your Folders</h3>
+                <div>
+                    <h3>Your Folders</h3>
+                </div>
+                {this.state.folders.length === 0 && <p>You have no folders at the moment.</p>}
+                {
+                    this.state.folders.map((folder, index) => (
+                        <Folder
+                            key={folder}
+                            text={folder}
+                            onDelete={this.handleDeleteFolder}
+                        />
+                    ))
+                }
             </div>
-            {folders.length === 0 && <p>You have no folders at the moment.</p>}
-            {
-                folders.map((folder, index) => (
-                    <Folder
-                        key={folder}
-                        text={folder}
-                        onDelete={handleDeleteFolder}
-                    />
-                ))
-            }
-        </div>
-    );
-};
+        );
+    }
+}
 
 export { Folders as default };
