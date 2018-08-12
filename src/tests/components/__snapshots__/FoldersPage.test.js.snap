@@ -3,6 +3,6 @@
 exports[`should render DashboardPage 1`] = `
 <div>
   <Folders />
-  <AddFolder />
+  <Connect(AddFolder) />
 </div>
 `;

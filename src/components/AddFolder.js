@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { addFolder } from '../actions/folders';
 
-class AddFolder extends React.Component {
+export class AddFolder extends React.Component {
     state = {
         error: undefined
     };
@@ -8,9 +10,19 @@ class AddFolder extends React.Component {
     addFolder = (e) => {
         e.preventDefault();
 
-        const option = e.target.elements.folder.value.trim();
-        console.log(option);
-        e.target.elements.folder.value = '';
+        const folderName = e.target.elements.folder.value.trim();
+        if (!folderName) {
+            this.setState(() => ({
+                error: 'Please provide folder name.'
+            }));
+        } else {
+            this.setState(() => ({
+                error: undefined
+            }));
+
+            this.props.addFolder(folderName);
+            e.target.elements.folder.value = '';
+        }
     };
 
     render() {
@@ -28,4 +40,8 @@ class AddFolder extends React.Component {
     }
 }
 
-export { AddFolder as default };
+const mapDispatchToProps = (dispatch) => ({
+    addFolder: (folder) => { dispatch(addFolder(folder)); }
+});
+
+export default connect(undefined, mapDispatchToProps)(AddFolder);
