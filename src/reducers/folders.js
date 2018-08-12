@@ -11,7 +11,10 @@ const foldersReducer = (state = foldersReducerDefaultState, action) => {
         case folderActions.edit:
             return state.map((folder) => {
                 if (folder.id === action.id) {
-                    return action.folder;
+                    return {
+                        id: action.id,
+                        folder: action.folder
+                    };
                 }
                 return folder;
             });
