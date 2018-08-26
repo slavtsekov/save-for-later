@@ -1,8 +1,12 @@
+import uuid from 'uuid';
 import folderActions from './actionTypes';
 
-const addFolder = (folder) => ({
+const addFolder = (name) => ({
     type: folderActions.add,
-    folder
+    folder: {
+        id: uuid(),
+        name
+    }
 });
 
 const removeFolder = (id) => ({

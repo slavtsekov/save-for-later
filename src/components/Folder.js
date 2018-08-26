@@ -1,12 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const Folder = (props) => (
+import { removeFolder } from '../actions/folders';
+
+export const Folder = (props) => (
     <div>
-        <p>{props.text}</p>
+        <p>{props.data.name}</p>
         <button
             type="button"
-            onClick={(е) => {
-                props.onDelete(props.text);
+            onClick={() => {
+                props.removeFolder(props.data.id);
             }}
         >
             Remove
@@ -14,4 +17,8 @@ const Folder = (props) => (
     </div>
 );
 
-export { Folder as default };
+const mapDispatchToProps = (dispatch) => ({
+    removeFolder: (id) => dispatch(removeFolder(id))
+});
+
+export default connect(undefined, mapDispatchToProps)(Folder);

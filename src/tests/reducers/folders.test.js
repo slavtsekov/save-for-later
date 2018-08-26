@@ -11,11 +11,12 @@ test('should set default state', () => {
 });
 
 test('should add a folder', () => {
-    const newFolder = { id: '4', folder: 'Test folder' };
-    const action = addFolder(newFolder);
+    const newFolderName = 'Test folder';
+    const action = addFolder(newFolderName);
 
     const state = foldersReducer(folders, action);
 
+    const newFolder = { id: expect.any(String), name: newFolderName };
     expect(state).toEqual([...folders, newFolder]);
 });
 

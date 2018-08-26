@@ -3,13 +3,16 @@ import folderActions from '../../actions/actionTypes';
 import folders from '../fixtures/folders';
 
 test('should setup add folder action object', () => {
-    const folder = 'Books';
+    const name = 'Books';
 
-    const action = addFolder(folder);
+    const action = addFolder(name);
 
     const expected = {
         type: folderActions.add,
-        folder
+        folder: {
+            id: expect.any(String),
+            name
+        }
     };
     expect(action).toEqual(expected);
 });

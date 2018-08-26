@@ -7,35 +7,32 @@ exports[`should render Folders correctly with data 1`] = `
       Your Folders
     </h3>
   </div>
-  <Folder
-    key="[object Object]"
-    onDelete={[Function]}
-    text={
+  <Connect(Folder)
+    data={
       Object {
         "folder": "Books",
         "id": "folder1",
       }
     }
+    key="folder1"
   />
-  <Folder
-    key="[object Object]"
-    onDelete={[Function]}
-    text={
+  <Connect(Folder)
+    data={
       Object {
         "folder": "Movies",
         "id": "folder2",
       }
     }
+    key="folder2"
   />
-  <Folder
-    key="[object Object]"
-    onDelete={[Function]}
-    text={
+  <Connect(Folder)
+    data={
       Object {
         "folder": "Games",
         "id": "folder3",
       }
     }
+    key="folder3"
   />
 </div>
 `;

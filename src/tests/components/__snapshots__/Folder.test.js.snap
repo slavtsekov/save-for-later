@@ -2,9 +2,7 @@
 
 exports[`should render Folder correctly 1`] = `
 <div>
-  <p>
-    Default
-  </p>
+  <p />
   <button
     onClick={[Function]}
     type="button"
