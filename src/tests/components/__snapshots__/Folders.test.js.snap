@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render Folders correctly 1`] = `
+exports[`should render Folders correctly with data 1`] = `
 <div>
   <div>
     <h3>
@@ -8,14 +8,47 @@ exports[`should render Folders correctly 1`] = `
     </h3>
   </div>
   <Folder
-    key="Folder 1"
+    key="[object Object]"
     onDelete={[Function]}
-    text="Folder 1"
+    text={
+      Object {
+        "folder": "Books",
+        "id": "folder1",
+      }
+    }
   />
   <Folder
-    key="Folder 2"
+    key="[object Object]"
     onDelete={[Function]}
-    text="Folder 2"
+    text={
+      Object {
+        "folder": "Movies",
+        "id": "folder2",
+      }
+    }
   />
+  <Folder
+    key="[object Object]"
+    onDelete={[Function]}
+    text={
+      Object {
+        "folder": "Games",
+        "id": "folder3",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`should render Folders correctly without data 1`] = `
+<div>
+  <div>
+    <h3>
+      Your Folders
+    </h3>
+  </div>
+  <p>
+    You have no folders at the moment.
+  </p>
 </div>
 `;

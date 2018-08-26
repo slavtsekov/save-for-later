@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Folder from './Folder';
 
-class Folders extends React.Component {
+export class Folders extends React.Component {
     state = {
         folders: ['Folder 1', 'Folder 2']
     };
@@ -20,9 +21,9 @@ class Folders extends React.Component {
                 <div>
                     <h3>Your Folders</h3>
                 </div>
-                {this.state.folders.length === 0 && <p>You have no folders at the moment.</p>}
+                {this.props.folders.length === 0 && <p>You have no folders at the moment.</p>}
                 {
-                    this.state.folders.map((folder, index) => (
+                    this.props.folders.map((folder, index) => (
                         <Folder
                             key={folder}
                             text={folder}
@@ -35,4 +36,8 @@ class Folders extends React.Component {
     }
 }
 
-export { Folders as default };
+const mapStateToProps = (state) => ({
+    folders: state.folders
+});
+
+export default connect(mapStateToProps)(Folders);
