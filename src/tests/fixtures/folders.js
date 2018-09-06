@@ -1,7 +1,7 @@
 const folders = [
-    { id: 'folder1', folder: 'Books' },
-    { id: 'folder2', folder: 'Movies' },
-    { id: 'folder3', folder: 'Games' }
+    { id: 'folder1', name: 'Books' },
+    { id: 'folder2', name: 'Movies' },
+    { id: 'folder3', name: 'Games' }
 ];
 
 export { folders as default };

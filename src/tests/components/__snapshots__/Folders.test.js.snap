@@ -10,8 +10,8 @@ exports[`should render Folders correctly with data 1`] = `
   <Connect(Folder)
     data={
       Object {
-        "folder": "Books",
         "id": "folder1",
+        "name": "Books",
       }
     }
     key="folder1"
@@ -19,8 +19,8 @@ exports[`should render Folders correctly with data 1`] = `
   <Connect(Folder)
     data={
       Object {
-        "folder": "Movies",
         "id": "folder2",
+        "name": "Movies",
       }
     }
     key="folder2"
@@ -28,8 +28,8 @@ exports[`should render Folders correctly with data 1`] = `
   <Connect(Folder)
     data={
       Object {
-        "folder": "Games",
         "id": "folder3",
+        "name": "Games",
       }
     }
     key="folder3"

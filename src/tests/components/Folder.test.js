@@ -9,11 +9,20 @@ test('should render Folder correctly', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-test('should call removeFolder when button is clicked', () => {
+test('should call removeFolder when delete button is clicked', () => {
     const removeFolderMock = jest.fn();
     const wrapper = shallow(<Folder data={folders[1]} removeFolder={removeFolderMock} />);
 
-    wrapper.find('button').simulate('click');
+    wrapper.find('button').at(1).simulate('click');
 
     expect(removeFolderMock).toHaveBeenLastCalledWith(folders[1].id);
 });
+
+// test('should call editFolder when edit button is clicked', () => {
+//     const editFolderMock = jest.fn();
+//     const wrapper = shallow(<Folder data={folders[1]} editFolder={editFolderMock} />);
+
+//     wrapper.find('button').at(0).simulate('click');
+
+//     expect(editFolderMock).toHaveBeenCalled();
+// });
