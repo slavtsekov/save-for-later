@@ -14,10 +14,10 @@ const removeFolder = (id) => ({
     id
 });
 
-const editFolder = (id, folder) => ({
+const editFolder = (id, name) => ({
     type: folderActions.edit,
     id,
-    folder
+    name
 });
 
 const setFolders = (folders) => ({

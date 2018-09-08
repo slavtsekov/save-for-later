@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { removeFolder } from '../actions/folders';
+import { removeFolder, editFolder } from '../actions/folders';
 
 export class Folder extends React.Component {
     state = {
@@ -26,7 +26,7 @@ export class Folder extends React.Component {
     saveFolder = () => {
         const folderName = this.state.folderName.trim();
         if (folderName) {
-            this.props.editFolder();
+            this.props.editFolder(this.props.data.id, folderName);
             this.setState(() => ({
                 editMode: false,
                 error: undefined
@@ -76,7 +76,8 @@ export class Folder extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    removeFolder: (id) => dispatch(removeFolder(id))
+    removeFolder: (id) => dispatch(removeFolder(id)),
+    editFolder: (id, name) => dispatch(editFolder(id, name))
 });
 
 export default connect(undefined, mapDispatchToProps)(Folder);

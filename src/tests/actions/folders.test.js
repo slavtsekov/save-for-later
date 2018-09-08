@@ -31,14 +31,14 @@ test('should setup remove folder action object', () => {
 
 test('should setup edit folder action object', () => {
     const id = '123test456';
-    const folder = 'Games';
+    const name = 'Games';
 
-    const action = editFolder(id, folder);
+    const action = editFolder(id, name);
 
     const expected = {
         type: folderActions.edit,
         id,
-        folder
+        name
     };
     expect(action).toEqual(expected);
 });

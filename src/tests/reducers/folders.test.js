@@ -38,12 +38,12 @@ test('should not remove a folder when id not found', () => {
 
 test('should edit a folder', () => {
     const { id } = folders[0];
-    const folder = 'Music';
-    const action = editFolder(id, folder);
+    const name = 'Music';
+    const action = editFolder(id, name);
 
     const state = foldersReducer(folders, action);
 
-    expect(state[0]).toEqual({ id, folder });
+    expect(state[0]).toEqual({ id, name });
 });
 
 test('should not edit a folder when id not found', () => {

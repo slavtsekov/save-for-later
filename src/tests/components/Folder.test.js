@@ -40,7 +40,7 @@ test('should set folder name in state', () => {
 
 test('should edit the folder name if folder name is valid', () => {
     const editFolderMock = jest.fn();
-    const wrapper = shallow(<Folder data={folders[1]} editFolder={editFolderMock} />);
+    const wrapper = shallow(<Folder data={folders[2]} editFolder={editFolderMock} />);
     wrapper.find('button').at(0).simulate('click');
     const value = 'Food';
     wrapper.find('input').simulate('change', {
@@ -49,7 +49,7 @@ test('should edit the folder name if folder name is valid', () => {
 
     wrapper.find('button').at(0).simulate('click');
 
-    expect(editFolderMock).toHaveBeenCalled();
+    expect(editFolderMock).toHaveBeenLastCalledWith(folders[2].id, value);
     expect(wrapper.state('editMode')).toBeFalsy();
     expect(wrapper.state('error')).toBeUndefined();
 });

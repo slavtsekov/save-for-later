@@ -13,7 +13,7 @@ const foldersReducer = (state = foldersReducerDefaultState, action) => {
                 if (folder.id === action.id) {
                     return {
                         id: action.id,
-                        folder: action.folder
+                        name: action.name
                     };
                 }
                 return folder;
