@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render LinkForm correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    onChange={[Function]}
+    placeholder="Title"
+    type="text"
+    value=""
+  />
+  <input
+    onChange={[Function]}
+    placeholder="URL"
+    type="text"
+    value=""
+  />
+  <textarea
+    onChange={[Function]}
+    placeholder="Add a description for the link (optional)"
+    value=""
+  />
+  <select
+    onChange={[Function]}
+    placeholder="Folder"
+    value=""
+  >
+    <option
+      value=""
+    />
+  </select>
+</form>
+`;

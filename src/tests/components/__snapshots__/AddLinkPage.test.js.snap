@@ -2,6 +2,9 @@
 
 exports[`should render AddLinkPage 1`] = `
 <div>
-  Add Link page content.
+  <h1>
+    Add Link
+  </h1>
+  <LinkForm />
 </div>
 `;

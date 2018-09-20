@@ -1,8 +1,11 @@
 import React from 'react';
 
+import LinkForm from './LinkForm';
+
 const AddLinkPage = () => (
     <div>
-        Add Link page content.
+        <h1>Add Link</h1>
+        <LinkForm />
     </div>
 );
 
