@@ -1,6 +1,12 @@
 import React from 'react';
 
 class LinkForm extends React.Component {
+    folders = [
+        { id: 'folder1', name: 'Books' },
+        { id: 'folder2', name: 'Games' },
+        { id: 'folder3', name: 'Movies' }
+    ];
+
     constructor(props) {
         super();
 
@@ -64,7 +70,17 @@ class LinkForm extends React.Component {
                     value={this.state.folder}
                     onChange={this.onFolderChange}
                 >
-                    <option value=""></option>
+                    <option value=""> --- </option>
+                    {
+                        this.folders.map((folder) => (
+                            <option
+                                key={folder.id}
+                                value={folder.id}
+                            >
+                                {folder.name}
+                            </option>
+                        ))
+                    }
                 </select>
             </form>
         );

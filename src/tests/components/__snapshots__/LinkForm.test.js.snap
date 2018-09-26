@@ -28,7 +28,27 @@ exports[`should render LinkForm correctly 1`] = `
   >
     <option
       value=""
-    />
+    >
+       --- 
+    </option>
+    <option
+      key="folder1"
+      value="folder1"
+    >
+      Books
+    </option>
+    <option
+      key="folder2"
+      value="folder2"
+    >
+      Games
+    </option>
+    <option
+      key="folder3"
+      value="folder3"
+    >
+      Movies
+    </option>
   </select>
 </form>
 `;

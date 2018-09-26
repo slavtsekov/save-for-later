@@ -39,3 +39,14 @@ test('should set description on input change', () => {
 
     expect(wrapper.state('description')).toBe(value);
 });
+
+test('should set folder on select change', () => {
+    const wrapper = shallow(<LinkForm />);
+    const value = 'Movies';
+
+    wrapper.find('select').simulate('change', {
+        target: { value }
+    });
+
+    expect(wrapper.state('folder')).toBe(value);
+});
