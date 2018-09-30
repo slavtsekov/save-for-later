@@ -50,5 +50,129 @@ exports[`should render LinkForm correctly 1`] = `
       Movies
     </option>
   </select>
+  <button
+    type="submit"
+  >
+    Submit Link
+  </button>
+</form>
+`;
+
+exports[`should render error for invalid form submission 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    onChange={[Function]}
+    placeholder="Title"
+    type="text"
+    value=""
+  />
+  <input
+    onChange={[Function]}
+    placeholder="URL"
+    type="text"
+    value=""
+  />
+  <textarea
+    onChange={[Function]}
+    placeholder="Add a description for the link (optional)"
+    value=""
+  />
+  <select
+    onChange={[Function]}
+    placeholder="Folder"
+    value=""
+  >
+    <option
+      value=""
+    >
+       --- 
+    </option>
+    <option
+      key="folder1"
+      value="folder1"
+    >
+      Books
+    </option>
+    <option
+      key="folder2"
+      value="folder2"
+    >
+      Games
+    </option>
+    <option
+      key="folder3"
+      value="folder3"
+    >
+      Movies
+    </option>
+  </select>
+  <button
+    type="submit"
+  >
+    Submit Link
+  </button>
+</form>
+`;
+
+exports[`should render error for invalid form submission 2`] = `
+<form
+  onSubmit={[Function]}
+>
+  <p>
+    Please provide title and valid URL!
+  </p>
+  <input
+    onChange={[Function]}
+    placeholder="Title"
+    type="text"
+    value=""
+  />
+  <input
+    onChange={[Function]}
+    placeholder="URL"
+    type="text"
+    value=""
+  />
+  <textarea
+    onChange={[Function]}
+    placeholder="Add a description for the link (optional)"
+    value=""
+  />
+  <select
+    onChange={[Function]}
+    placeholder="Folder"
+    value=""
+  >
+    <option
+      value=""
+    >
+       --- 
+    </option>
+    <option
+      key="folder1"
+      value="folder1"
+    >
+      Books
+    </option>
+    <option
+      key="folder2"
+      value="folder2"
+    >
+      Games
+    </option>
+    <option
+      key="folder3"
+      value="folder3"
+    >
+      Movies
+    </option>
+  </select>
+  <button
+    type="submit"
+  >
+    Submit Link
+  </button>
 </form>
 `;

@@ -50,3 +50,50 @@ test('should set folder on select change', () => {
 
     expect(wrapper.state('folder')).toBe(value);
 });
+
+test('should render error for invalid form submission', () => {
+    const wrapper = shallow(<LinkForm />);
+    expect(wrapper).toMatchSnapshot();
+
+    wrapper.find('form').simulate('submit', {
+        preventDefault: () => {}
+    });
+
+    expect(wrapper.state('error').length).toBeGreaterThan(0);
+    expect(wrapper).toMatchSnapshot();
+});
+
+test('should send data for valid form submission', () => {
+    const onSumbitSpy = jest.fn();
+    const linkData = {
+        title: 'Something cool',
+        url: 'http://cool.com',
+        description: 'Just a cool link',
+        folder: ''
+    };
+    const wrapper = shallow(<LinkForm onSubmit={onSumbitSpy} link={linkData} />);
+
+    wrapper.find('form').simulate('submit', {
+        preventDefault: () => {}
+    });
+
+    expect(onSumbitSpy).toHaveBeenLastCalledWith(linkData);
+});
+
+test('should render error for invalid form url', () => {
+    const onSumbitSpy = jest.fn();
+    const linkData = {
+        title: 'Something cool',
+        url: 'test',
+        description: 'Just a cool link',
+        folder: ''
+    };
+    const wrapper = shallow(<LinkForm onSubmit={onSumbitSpy} link={linkData} />);
+
+    wrapper.find('form').simulate('submit', {
+        preventDefault: () => {}
+    });
+
+    expect(wrapper.state('error').length).toBeGreaterThan(0);
+    expect(onSumbitSpy).not.toHaveBeenCalled();
+});

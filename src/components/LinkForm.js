@@ -21,6 +21,24 @@ class LinkForm extends React.Component {
 
     onFormSubmit = (e) => {
         e.preventDefault();
+
+        const urlRegEx = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gm;
+        if (!this.state.title || !this.state.url || !urlRegEx.test(this.state.url)) {
+            this.setState(() => ({
+                error: 'Please provide title and valid URL!'
+            }));
+        } else {
+            this.setState(() => ({
+                error: undefined
+            }));
+
+            this.props.onSubmit({
+                title: this.state.title,
+                url: this.state.url,
+                description: this.state.description,
+                folder: this.state.folder
+            });
+        }
     };
 
     onTitleChange = (e) => {
@@ -82,6 +100,7 @@ class LinkForm extends React.Component {
                         ))
                     }
                 </select>
+                <button type="submit">Submit Link</button>
             </form>
         );
     }
