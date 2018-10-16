@@ -26,6 +26,7 @@
         "no-underscore-dangle": "off",
         "global-require": "warn",
         "prefer-destructuring": "warn",
+        "no-useless-escape": "warn",
         "react/jsx-indent": [2, 4],
         "react/jsx-filename-extension": 0,
         "react/jsx-one-expression-per-line": 0,
