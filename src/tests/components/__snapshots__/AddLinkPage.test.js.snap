@@ -5,6 +5,8 @@ exports[`should render AddLinkPage 1`] = `
   <h1>
     Add Link
   </h1>
-  <LinkForm />
+  <LinkForm
+    onSubmit={[Function]}
+  />
 </div>
 `;
