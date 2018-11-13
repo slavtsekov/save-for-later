@@ -10,14 +10,8 @@ test('should render AddLinkPage', () => {
 test('should redirect to home page on submit', () => {
     const historyMock = { push: jest.fn() };
     const wrapper = shallow(<AddLinkPage history={historyMock} />);
-    const data = {
-        title: 'Test',
-        url: 'http://test.te',
-        description: '',
-        folder: ''
-    };
 
-    wrapper.find('LinkForm').prop('onSubmit')(data);
+    wrapper.find('LinkForm').prop('onSubmit')();
 
     expect(historyMock.push).toHaveBeenLastCalledWith('/');
 });

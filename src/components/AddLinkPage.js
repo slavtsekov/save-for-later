@@ -4,7 +4,6 @@ import LinkForm from './LinkForm';
 
 class AddLinkPage extends React.Component {
     onSubmit = (data) => {
-        console.log(data);
         this.props.history.push('/');
     };
 

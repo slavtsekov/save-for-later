@@ -2,6 +2,19 @@
 
 exports[`should render DashboardPage 1`] = `
 <div>
-  Edit Link page content.
+  <h1>
+    Add Link
+  </h1>
+  <LinkForm
+    link={
+      Object {
+        "description": "New Link",
+        "folder": "folder1",
+        "title": "New Link",
+        "url": "link.com",
+      }
+    }
+    onSubmit={[Function]}
+  />
 </div>
 `;
