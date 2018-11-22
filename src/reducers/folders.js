@@ -1,4 +1,4 @@
-import folderActions from '../actions/actionTypes';
+import { folderActions } from '../actions/actionTypes';
 
 const foldersReducerDefaultState = [];
 

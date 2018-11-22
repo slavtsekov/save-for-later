@@ -1,5 +1,5 @@
 import { addFolder, removeFolder, editFolder, setFolders } from '../../actions/folders';
-import folderActions from '../../actions/actionTypes';
+import { folderActions } from '../../actions/actionTypes';
 import folders from '../fixtures/folders';
 
 test('should setup add folder action object', () => {

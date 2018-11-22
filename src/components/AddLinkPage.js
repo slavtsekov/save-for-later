@@ -1,9 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import LinkForm from './LinkForm';
+import { addLink } from '../actions/links';
 
-class AddLinkPage extends React.Component {
+export class AddLinkPage extends React.Component {
     onSubmit = (data) => {
+        this.props.addLink(data);
         this.props.history.push('/');
     };
 
@@ -17,4 +20,8 @@ class AddLinkPage extends React.Component {
     }
 }
 
-export { AddLinkPage as default };
+const mapDispatchToProps = (dispatch) => ({
+    addLink: (data) => { dispatch(addLink(data)); }
+});
+
+export default connect(undefined, mapDispatchToProps)(AddLinkPage);

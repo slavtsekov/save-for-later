@@ -1,5 +1,5 @@
 import uuid from 'uuid';
-import folderActions from './actionTypes';
+import { folderActions } from './actionTypes';
 
 const addFolder = (name) => ({
     type: folderActions.add,

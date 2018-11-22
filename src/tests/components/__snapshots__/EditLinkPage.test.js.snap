@@ -3,7 +3,7 @@
 exports[`should render DashboardPage 1`] = `
 <div>
   <h1>
-    Add Link
+    Edit Link
   </h1>
   <LinkForm
     link={

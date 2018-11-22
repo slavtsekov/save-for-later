@@ -5,4 +5,9 @@ const folderActions = {
     set: 'SET_FOLDERS'
 };
 
-export { folderActions as default };
+const linkActions = {
+    add: 'ADD_LINK'
+};
+
+
+export { folderActions, linkActions };
