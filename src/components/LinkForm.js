@@ -1,12 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-class LinkForm extends React.Component {
-    folders = [
-        { id: 'folder1', name: 'Books' },
-        { id: 'folder2', name: 'Games' },
-        { id: 'folder3', name: 'Movies' }
-    ];
-
+export class LinkForm extends React.Component {
     constructor(props) {
         super();
 
@@ -90,7 +85,7 @@ class LinkForm extends React.Component {
                 >
                     <option value=""> --- </option>
                     {
-                        this.folders.map((folder) => (
+                        this.props.folders.map((folder) => (
                             <option
                                 key={folder.id}
                                 value={folder.id}
@@ -106,4 +101,8 @@ class LinkForm extends React.Component {
     }
 }
 
-export { LinkForm as default };
+const mapStateToProps = (state) => ({
+    folders: state.folders
+});
+
+export default connect(mapStateToProps)(LinkForm);

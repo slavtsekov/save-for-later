@@ -1,14 +1,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import LinkForm from '../../components/LinkForm';
+import { LinkForm } from '../../components/LinkForm';
+import folders from '../fixtures/folders';
+
+let wrapper;
+beforeEach(() => {
+    wrapper = shallow(<LinkForm folders={folders} />);
+});
 
 test('should render LinkForm correctly', () => {
-    const wrapper = shallow(<LinkForm />);
     expect(wrapper).toMatchSnapshot();
 });
 
 test('should set title on input change', () => {
-    const wrapper = shallow(<LinkForm />);
     const value = 'Hot News';
 
     wrapper.find('input').at(0).simulate('change', {
@@ -19,7 +23,6 @@ test('should set title on input change', () => {
 });
 
 test('should set url on input change', () => {
-    const wrapper = shallow(<LinkForm />);
     const value = 'http://test.te';
 
     wrapper.find('input').at(1).simulate('change', {
@@ -30,7 +33,6 @@ test('should set url on input change', () => {
 });
 
 test('should set description on input change', () => {
-    const wrapper = shallow(<LinkForm />);
     const value = 'Check this later';
 
     wrapper.find('textarea').simulate('change', {
@@ -41,7 +43,6 @@ test('should set description on input change', () => {
 });
 
 test('should set folder on select change', () => {
-    const wrapper = shallow(<LinkForm />);
     const value = 'Movies';
 
     wrapper.find('select').simulate('change', {
@@ -52,7 +53,6 @@ test('should set folder on select change', () => {
 });
 
 test('should render error for invalid form submission', () => {
-    const wrapper = shallow(<LinkForm />);
     expect(wrapper).toMatchSnapshot();
 
     wrapper.find('form').simulate('submit', {
@@ -71,7 +71,7 @@ test('should send data for valid form submission', () => {
         description: 'Just a cool link',
         folder: ''
     };
-    const wrapper = shallow(<LinkForm onSubmit={onSumbitSpy} link={linkData} />);
+    wrapper = shallow(<LinkForm onSubmit={onSumbitSpy} link={linkData} folders={folders} />);
 
     wrapper.find('form').simulate('submit', {
         preventDefault: () => {}
@@ -88,7 +88,7 @@ test('should render error for invalid form url', () => {
         description: 'Just a cool link',
         folder: ''
     };
-    const wrapper = shallow(<LinkForm onSubmit={onSumbitSpy} link={linkData} />);
+    wrapper = shallow(<LinkForm onSubmit={onSumbitSpy} link={linkData} folders={folders} />);
 
     wrapper.find('form').simulate('submit', {
         preventDefault: () => {}

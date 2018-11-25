@@ -41,13 +41,13 @@ exports[`should render LinkForm correctly 1`] = `
       key="folder2"
       value="folder2"
     >
-      Games
+      Movies
     </option>
     <option
       key="folder3"
       value="folder3"
     >
-      Movies
+      Games
     </option>
   </select>
   <button
@@ -99,13 +99,13 @@ exports[`should render error for invalid form submission 1`] = `
       key="folder2"
       value="folder2"
     >
-      Games
+      Movies
     </option>
     <option
       key="folder3"
       value="folder3"
     >
-      Movies
+      Games
     </option>
   </select>
   <button
@@ -160,13 +160,13 @@ exports[`should render error for invalid form submission 2`] = `
       key="folder2"
       value="folder2"
     >
-      Games
+      Movies
     </option>
     <option
       key="folder3"
       value="folder3"
     >
-      Movies
+      Games
     </option>
   </select>
   <button

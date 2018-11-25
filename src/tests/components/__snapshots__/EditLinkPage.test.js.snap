@@ -5,7 +5,7 @@ exports[`should render DashboardPage 1`] = `
   <h1>
     Edit Link
   </h1>
-  <LinkForm
+  <Connect(LinkForm)
     link={
       Object {
         "description": "New Link",

@@ -18,7 +18,7 @@ test('should handle submit correctly', () => {
         folder: 'folder1'
     };
 
-    wrapper.find('LinkForm').prop('onSubmit')(link);
+    wrapper.find('Connect(LinkForm)').prop('onSubmit')(link);
 
     expect(addLinkMock).toHaveBeenLastCalledWith(link);
     expect(historyMock.push).toHaveBeenLastCalledWith('/');
