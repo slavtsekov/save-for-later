@@ -7,12 +7,19 @@ test('should render AddLinkPage', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-test('should redirect to home page on submit', () => {
+test('should handle submit correctly', () => {
     const historyMock = { push: jest.fn() };
     const addLinkMock = jest.fn();
     const wrapper = shallow(<AddLinkPage history={historyMock} addLink={addLinkMock} />);
+    const link = {
+        title: 'Some link I found',
+        url: 'www.somelink.com',
+        description: 'Check later',
+        folder: 'folder1'
+    };
 
-    wrapper.find('LinkForm').prop('onSubmit')();
+    wrapper.find('LinkForm').prop('onSubmit')(link);
 
+    expect(addLinkMock).toHaveBeenLastCalledWith(link);
     expect(historyMock.push).toHaveBeenLastCalledWith('/');
 });
