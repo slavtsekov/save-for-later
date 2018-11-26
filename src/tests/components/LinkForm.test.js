@@ -1,7 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+
 import { LinkForm } from '../../components/LinkForm';
 import folders from '../fixtures/folders';
+import links from '../fixtures/links';
 
 let wrapper;
 beforeEach(() => {
@@ -65,12 +67,8 @@ test('should render error for invalid form submission', () => {
 
 test('should send data for valid form submission', () => {
     const onSumbitSpy = jest.fn();
-    const linkData = {
-        title: 'Something cool',
-        url: 'http://cool.com',
-        description: 'Just a cool link',
-        folder: ''
-    };
+    const linkData = links[0];
+    delete linkData.id;
     wrapper = shallow(<LinkForm onSubmit={onSumbitSpy} link={linkData} folders={folders} />);
 
     wrapper.find('form').simulate('submit', {
@@ -82,12 +80,9 @@ test('should send data for valid form submission', () => {
 
 test('should render error for invalid form url', () => {
     const onSumbitSpy = jest.fn();
-    const linkData = {
-        title: 'Something cool',
-        url: 'test',
-        description: 'Just a cool link',
-        folder: ''
-    };
+    const linkData = links[1];
+    delete linkData.id;
+    linkData.url = 'test';
     wrapper = shallow(<LinkForm onSubmit={onSumbitSpy} link={linkData} folders={folders} />);
 
     wrapper.find('form').simulate('submit', {
