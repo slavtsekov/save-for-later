@@ -1,18 +1,37 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import EditLinkPage from '../../components/EditLinkPage';
 
-test('should render DashboardPage', () => {
-    const wrapper = shallow(<EditLinkPage />);
+import { EditLinkPage } from '../../components/EditLinkPage';
+import links from '../fixtures/links';
+
+let editedLink;
+let editLinkMock;
+let historyMock;
+let wrapper;
+
+beforeEach(() => {
+    [, , editedLink] = links;
+    editLinkMock = jest.fn();
+    historyMock = { push: jest.fn() };
+    wrapper = shallow(
+        <EditLinkPage
+            link={editedLink}
+            editLink={editLinkMock}
+            history={historyMock}
+        />
+    );
+});
+
+test('should render EditLinkPage', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
 
-test('should redirect to home page on submit', () => {
-    const historyMock = { push: jest.fn() };
-    const wrapper = shallow(<EditLinkPage history={historyMock} />);
+test('should handle submit correctly', () => {
+    const updatedLink = { ...editedLink, description: '' };
 
-    wrapper.find('Connect(LinkForm)').prop('onSubmit')();
+    wrapper.find('Connect(LinkForm)').prop('onSubmit')(updatedLink);
 
+    expect(editLinkMock).toHaveBeenLastCalledWith(editedLink.id, updatedLink);
     expect(historyMock.push).toHaveBeenLastCalledWith('/');
 });

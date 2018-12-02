@@ -9,4 +9,10 @@ const addLink = (data) => ({
     }
 });
 
-export { addLink };
+const editLink = (id, link) => ({
+    type: linkActions.edit,
+    id,
+    link
+});
+
+export { addLink, editLink };

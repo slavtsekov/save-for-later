@@ -6,7 +6,8 @@ const folderActions = {
 };
 
 const linkActions = {
-    add: 'ADD_LINK'
+    add: 'ADD_LINK',
+    edit: 'EDIT_LINK'
 };
 
 

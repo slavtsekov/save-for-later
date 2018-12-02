@@ -1,5 +1,5 @@
 import linksReducer from '../../reducers/links';
-import { addLink } from '../../actions/links';
+import { addLink, editLink } from '../../actions/links';
 import links from '../fixtures/links';
 
 test('should set default state', () => {
@@ -22,4 +22,18 @@ test('should add a link', () => {
         ...linkData
     };
     expect(state).toEqual([links[0], links[1], newLink]);
+});
+
+test('should edit a link', () => {
+    const editLinkData = {
+        url: 'www.coolcats.com'
+    };
+    const action = editLink('link1', editLinkData);
+
+    const state = linksReducer(links, action);
+
+    expect(state[0]).toEqual({
+        ...links[0],
+        ...editLinkData
+    });
 });
